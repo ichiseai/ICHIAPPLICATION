@@ -253,7 +253,7 @@ a:hover{color:#2E5C7E}
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:40px 24px;justify-items:center">
           <sc-for list="{{ pjx2Stands }}" as="s" hint-placeholder-count="4">
             <div style="display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;max-width:260px">
-              <div onMouseEnter="{{ s.enter }}" onMouseLeave="{{ standLeave }}" style="position:relative;width:100%;aspect-ratio:720/1160;transition:transform .35s cubic-bezier(.2,.8,.2,1);transform:{{ s.lift }}">
+              <div onMouseEnter="{{ s.enter }}" onMouseLeave="{{ standLeave }}" style="position:relative;width:100%;aspect-ratio:720/1384;transition:transform .35s cubic-bezier(.2,.8,.2,1);transform:{{ s.lift }}">
                 <img src="{{ s.img }}" alt="{{ s.name }} 아크릴 스탠드" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(0 14px 18px #1E2A361F) drop-shadow(0 2px 3px #1E2A3614)">
                 <div style="position:absolute;inset:0;pointer-events:none;-webkit-mask-image:url({{ s.mask }});mask-image:url({{ s.mask }});-webkit-mask-size:100% 100%;mask-size:100% 100%;background:linear-gradient(115deg,transparent 38%,#FFFFFF73 46%,transparent 53%,transparent 62%,#FFFFFF40 66%,transparent 70%);background-size:300% 300%;background-position:{{ s.glossPos }};transition:background-position 1s ease"></div>
               </div>
@@ -514,7 +514,7 @@ a:hover{color:#2E5C7E}
     <article style="display:flex;flex-direction:column;gap:32px">
       <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px 32px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid #D6E2EB;font-family:'Pretendard Variable',Pretendard,'Noto Sans JP',sans-serif">
         <div style="display:flex;flex-direction:column;gap:8px;min-width:0">
-          <span style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.16em;color:#447CA2">ART DIRECTING · STUDIO OCI</span>
+          <span style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.16em;color:#447CA2">ART DIRECTING · SKOSHISM</span>
           <h3 style="margin:0;font-size:clamp(20px,2.2vw,26px);font-weight:700;line-height:1.35">{{ t.dirTitle }}</h3>
         </div>
         <div style="display:flex;flex-direction:column;gap:2px">
@@ -605,12 +605,12 @@ class Component extends DCLogic {
   i18n = {
     ko: { langNote: '이 페이지는 한국어와 일본어를 지원하며, 한국어를 기준으로 작성되었습니다.\n일본어는 번역 도구를 활용해 옮겼기 때문에 일부 표현이 자연스럽지 않을 수 있습니다.\n원활한 감상을 위해 PC 환경에서 열람하시는 것을 권장합니다.', applyTag: 'DESIGNER APPLICATION', applyNote: '버튜버 디자이너 모집에 지원하기 위해 준비한 지원 페이지입니다.', eyebrow: 'VTUBER DESIGNER · 이치', name: '이치 (ichi)', expHead: '경력 · 프리랜서 계약', projHead: '프로젝트', poster: '포스터', works: '작업물', kinds: '종', avg: '평균 작업 기간', perSheet: '주 / 1장', unitWeek: '주', people: '명',
       goodsHint: '마우스를 올리면 실물 굿즈처럼 반응합니다.', flipHint: '마우스를 올리면 뒷면이 보입니다.', posterHint: '캐릭터별 개인 포스터 4종입니다.', composition: '구성',
-      standTitle: 'PJX 굿즈 디자인 프로젝트 1', pjx2Title: 'PJX 굿즈 디자인 프로젝트 2', aesTitle: 'AESTHER 굿즈 디자인 프로젝트', trTitle: '애니메이션 <도쿄 리벤저스> 굿즈 디자인', slTitle: '스텔라이브 굿즈 디자인', webTitle: '허블사무소 공식 웹페이지 디자인', roleLabel: '역할', webRole: '총괄 디렉터 · 디자이너 2인 협업', webDesc: '전체 와이어프레임과 화면 구도를 설계하고, 디렉팅과 디자인을 담당했습니다.', dirTitle: 'STUDIO OCI 아트 디렉팅 · 전/후 비교', dirDesc: '총괄 디렉터로 아트 디렉팅을 맡고, 최종 슬로건 디자인과 티켓 앞면 디자인을 담당했습니다.', dirRole: '총괄 디렉터 · 디자이너 3인 협업', ehTitle: '애니메이션 <에브리데이 호스트> 굿즈 디자인',
+      standTitle: 'PJX 굿즈 디자인 프로젝트 1', pjx2Title: 'PJX 굿즈 디자인 프로젝트 2', aesTitle: 'AESTHER 굿즈 디자인 프로젝트', trTitle: '애니메이션 <도쿄 리벤저스> 굿즈 디자인', slTitle: '스텔라이브 굿즈 디자인', webTitle: '허블사무소 공식 웹페이지 디자인', roleLabel: '역할', webRole: '총괄 디렉터 · 디자이너 2인 협업', webDesc: '전체 와이어프레임과 화면 구도를 설계하고, 디렉팅과 디자인을 담당했습니다.', dirTitle: 'SKOSHISM 오프라인 이벤트 굿즈 아트 디렉팅 · 전/후 비교', dirDesc: '총괄 디렉터로 아트 디렉팅을 맡고, 최종 슬로건 디자인과 티켓 앞면 디자인을 담당했습니다.', dirRole: '총괄 디렉터 · 디자이너 3인 협업', ehTitle: '애니메이션 <에브리데이 호스트> 굿즈 디자인',
       s1: '상담 · 레퍼런스 정리', d1: '캐릭터 설정, 방송 콘셉트, 원하는 분위기를 함께 정리합니다.', s2: '러프 시안', d2: '구도와 배치를 러프로 먼저 보여드립니다.',
       s3: '작업 · 수정', d3: '진행 상황을 중간중간 공유하며 피드백을 반영합니다.', s4: '최종 납품', d4: 'PSD · PNG(투명 배경) 등 필요한 형식으로 전달합니다.' },
     ja: { langNote: '本ページは韓国語と日本語に対応しており、韓国語を基準に作成しています。\n日本語は翻訳ツールを使用しているため、一部不自然な表現が含まれる場合があります。ご了承ください。\n快適にご覧いただくため、PCでの閲覧をおすすめします。', applyTag: 'DESIGNER APPLICATION', applyNote: 'VTuberデザイナー募集への応募のためにご用意したページです。', eyebrow: 'VTUBER DESIGNER · イチ', name: 'イチ (ichi)', expHead: '経歴 · フリーランス契約', projHead: 'プロジェクト', poster: 'ポスター', works: '作品', kinds: '種', avg: '平均制作期間', perSheet: '週 / 1枚', unitWeek: '週', people: '名',
       goodsHint: 'マウスを乗せると実物のグッズのように反応します。', flipHint: 'マウスを乗せると裏面が表示されます。', posterHint: 'キャラクター別の個人ポスター4種です。', composition: '構成',
-      standTitle: 'PJX グッズデザインプロジェクト 1', pjx2Title: 'PJX グッズデザインプロジェクト 2', aesTitle: 'AESTHER グッズデザインプロジェクト', trTitle: 'アニメ『東京リベンジャーズ』グッズデザイン', slTitle: 'ステラライブ グッズデザイン', webTitle: 'ハッブル事務所 公式Webページデザイン', roleLabel: '役割', webRole: '総括ディレクター · デザイナー2名と協業', webDesc: '全体のワイヤーフレームと画面構成を設計し、ディレクションとデザインを担当しました。', dirTitle: 'STUDIO OCI アートディレクション · ビフォー/アフター', dirDesc: '総括ディレクターとしてアートディレクションを担当し、最終スローガンデザインとチケット表面デザインを手がけました。', dirRole: '総括ディレクター · デザイナー3名と協業', ehTitle: 'アニメ『エブリデイホスト』グッズデザイン',
+      standTitle: 'PJX グッズデザインプロジェクト 1', pjx2Title: 'PJX グッズデザインプロジェクト 2', aesTitle: 'AESTHER グッズデザインプロジェクト', trTitle: 'アニメ『東京リベンジャーズ』グッズデザイン', slTitle: 'ステラライブ グッズデザイン', webTitle: 'ハッブル事務所 公式Webページデザイン', roleLabel: '役割', webRole: '総括ディレクター · デザイナー2名と協業', webDesc: '全体のワイヤーフレームと画面構成を設計し、ディレクションとデザインを担当しました。', dirTitle: 'SKOSHISM オフラインイベントグッズ アートディレクション · ビフォー/アフター', dirDesc: '総括ディレクターとしてアートディレクションを担当し、最終スローガンデザインとチケット表面デザインを手がけました。', dirRole: '総括ディレクター · デザイナー3名と協業', ehTitle: 'アニメ『エブリデイホスト』グッズデザイン',
       s1: 'ヒアリング · 資料整理', d1: 'キャラクター設定、配信コンセプト、ご希望の雰囲気を一緒に整理します。', s2: 'ラフ案', d2: '構図とレイアウトをまずラフでお見せします。',
       s3: '制作 · 修正', d3: '進捗を随時共有し、フィードバックを反映します。', s4: '最終納品', d4: 'PSD · PNG(透過背景)など必要な形式でお渡しします。' }
   };
