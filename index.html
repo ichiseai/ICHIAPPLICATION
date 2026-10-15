@@ -510,6 +510,35 @@ a:hover{color:#2E5C7E}
       </div>
     </article>
     </sc-if>
+    <sc-if value="{{ isEvent }}" hint-placeholder-val="{{ false }}">
+    <article style="display:flex;flex-direction:column;gap:32px">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px 32px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid #D6E2EB;font-family:'Pretendard Variable',Pretendard,'Noto Sans JP',sans-serif">
+        <div style="display:flex;flex-direction:column;gap:8px;min-width:0">
+          <span style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.16em;color:#447CA2">CONTENT PLANNING · PERSONAL WORK</span>
+          <h3 style="margin:0;font-size:clamp(20px,2.2vw,26px);font-weight:700;line-height:1.35">{{ t.evTitle }}</h3>
+        </div>
+        <div style="display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap">
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-size:12px;font-weight:600;color:#5B6773">{{ t.roleLabel }}</span>
+            <span style="font-size:15px;font-weight:700;color:#447CA2">{{ t.evRole }}</span>
+          </div>
+          <a href="https://kate1023-web.github.io/hippie-license/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;padding:9px 16px;border-radius:999px;background:#447CA2;color:#FFFFFF;font-size:14px;font-weight:700;text-decoration:none" style-hover="background:#2E5C7E;color:#FFFFFF">{{ t.evLink }} ↗</a>
+        </div>
+      </div>
+      <p style="margin:-12px 0 0;font-family:'Pretendard Variable',Pretendard,'Noto Sans JP',sans-serif;font-size:14px;line-height:1.7;color:#3A4652;max-width:720px;text-wrap:pretty">{{ t.evDesc }}</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;align-items:start">
+        <sc-for list="{{ eventShots }}" as="w" hint-placeholder-count="2">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="border-radius:10px;overflow:hidden;background:#FFFFFF;border:1px solid #E3EAF0;box-shadow:0 10px 24px #447CA21F">
+              <div style="display:flex;gap:5px;padding:8px 10px;border-bottom:1px solid #E3EAF0;background:#F5F8FB"><span style="width:7px;height:7px;border-radius:50%;background:#D6E2EB"></span><span style="width:7px;height:7px;border-radius:50%;background:#D6E2EB"></span><span style="width:7px;height:7px;border-radius:50%;background:#D6E2EB"></span></div>
+              <img src="{{ w.src }}" alt="{{ w.name }}" loading="lazy" style="width:100%;height:auto;display:block">
+            </div>
+            <span style="font-family:Montserrat,sans-serif;font-size:12px;font-weight:600;letter-spacing:0.06em;color:#5B6773">{{ w.name }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </article>
+    </sc-if>
     <sc-if value="{{ isDir }}" hint-placeholder-val="{{ false }}">
     <article style="display:flex;flex-direction:column;gap:32px">
       <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px 32px;flex-wrap:wrap;padding-bottom:20px;border-bottom:1px solid #D6E2EB;font-family:'Pretendard Variable',Pretendard,'Noto Sans JP',sans-serif">
@@ -605,12 +634,12 @@ class Component extends DCLogic {
   i18n = {
     ko: { langNote: '이 페이지는 한국어와 일본어를 지원하며, 한국어를 기준으로 작성되었습니다.\n일본어는 번역 도구를 활용해 옮겼기 때문에 일부 표현이 자연스럽지 않을 수 있습니다.\n원활한 감상을 위해 PC 환경에서 열람하시는 것을 권장합니다.', applyTag: 'DESIGNER APPLICATION', applyNote: '버튜버 디자이너 모집에 지원하기 위해 준비한 지원 페이지입니다.', eyebrow: 'VTUBER DESIGNER · 이치', name: '이치 (ichi)', expHead: '경력 · 프리랜서 계약', projHead: '프로젝트', poster: '포스터', works: '작업물', kinds: '종', avg: '평균 작업 기간', perSheet: '주 / 1장', unitWeek: '주', people: '명',
       goodsHint: '마우스를 올리면 실물 굿즈처럼 반응합니다.', flipHint: '마우스를 올리면 뒷면이 보입니다.', posterHint: '캐릭터별 개인 포스터 4종입니다.', composition: '구성',
-      standTitle: 'PJX 굿즈 디자인 프로젝트 1', pjx2Title: 'PJX 굿즈 디자인 프로젝트 2', aesTitle: 'AESTHER 굿즈 디자인 프로젝트', trTitle: '애니메이션 <도쿄 리벤저스> 굿즈 디자인', slTitle: '스텔라이브 굿즈 디자인', webTitle: '허블사무소 공식 웹페이지 디자인', roleLabel: '역할', webRole: '총괄 디렉터 · 디자이너 2인 협업', webDesc: '전체 와이어프레임과 화면 구도를 설계하고, 디렉팅과 디자인을 담당했습니다.', dirTitle: 'SKOSHISM 오프라인 이벤트 굿즈 아트 디렉팅 · 전/후 비교', dirDesc: '총괄 디렉터로 아트 디렉팅을 맡고, 최종 슬로건 디자인과 티켓 앞면 디자인을 담당했습니다.', dirRole: '총괄 디렉터 · 디자이너 3인 협업', ehTitle: '애니메이션 <에브리데이 호스트> 굿즈 디자인',
+      standTitle: 'PJX 굿즈 디자인 프로젝트 1', pjx2Title: 'PJX 굿즈 디자인 프로젝트 2', aesTitle: 'AESTHER 굿즈 디자인 프로젝트', trTitle: '애니메이션 <도쿄 리벤저스> 굿즈 디자인', slTitle: '스텔라이브 굿즈 디자인', evTitle: "컨텐츠 기획 '히삐 자격증'", evRole: '기획 · 웹디자인 전체 · 총괄 디렉팅', evDesc: '이벤트 기획부터 웹페이지 디자인 전체, 총괄 디렉팅까지 담당했습니다.', evLink: '사이트 보기', webTitle: '허블사무소 공식 웹페이지 디자인', roleLabel: '역할', webRole: '총괄 디렉터 · 디자이너 2인 협업', webDesc: '전체 와이어프레임과 화면 구도를 설계하고, 디렉팅과 디자인을 담당했습니다.', dirTitle: 'SKOSHISM 오프라인 이벤트 굿즈 아트 디렉팅 · 전/후 비교', dirDesc: '총괄 디렉터로 아트 디렉팅을 맡고, 최종 슬로건 디자인과 티켓 앞면 디자인을 담당했습니다.', dirRole: '총괄 디렉터 · 디자이너 3인 협업', ehTitle: '애니메이션 <에브리데이 호스트> 굿즈 디자인',
       s1: '상담 · 레퍼런스 정리', d1: '캐릭터 설정, 방송 콘셉트, 원하는 분위기를 함께 정리합니다.', s2: '러프 시안', d2: '구도와 배치를 러프로 먼저 보여드립니다.',
       s3: '작업 · 수정', d3: '진행 상황을 중간중간 공유하며 피드백을 반영합니다.', s4: '최종 납품', d4: 'PSD · PNG(투명 배경) 등 필요한 형식으로 전달합니다.' },
     ja: { langNote: '本ページは韓国語と日本語に対応しており、韓国語を基準に作成しています。\n日本語は翻訳ツールを使用しているため、一部不自然な表現が含まれる場合があります。ご了承ください。\n快適にご覧いただくため、PCでの閲覧をおすすめします。', applyTag: 'DESIGNER APPLICATION', applyNote: 'VTuberデザイナー募集への応募のためにご用意したページです。', eyebrow: 'VTUBER DESIGNER · イチ', name: 'イチ (ichi)', expHead: '経歴 · フリーランス契約', projHead: 'プロジェクト', poster: 'ポスター', works: '作品', kinds: '種', avg: '平均制作期間', perSheet: '週 / 1枚', unitWeek: '週', people: '名',
       goodsHint: 'マウスを乗せると実物のグッズのように反応します。', flipHint: 'マウスを乗せると裏面が表示されます。', posterHint: 'キャラクター別の個人ポスター4種です。', composition: '構成',
-      standTitle: 'PJX グッズデザインプロジェクト 1', pjx2Title: 'PJX グッズデザインプロジェクト 2', aesTitle: 'AESTHER グッズデザインプロジェクト', trTitle: 'アニメ『東京リベンジャーズ』グッズデザイン', slTitle: 'ステラライブ グッズデザイン', webTitle: 'ハッブル事務所 公式Webページデザイン', roleLabel: '役割', webRole: '総括ディレクター · デザイナー2名と協業', webDesc: '全体のワイヤーフレームと画面構成を設計し、ディレクションとデザインを担当しました。', dirTitle: 'SKOSHISM オフラインイベントグッズ アートディレクション · ビフォー/アフター', dirDesc: '総括ディレクターとしてアートディレクションを担当し、最終スローガンデザインとチケット表面デザインを手がけました。', dirRole: '総括ディレクター · デザイナー3名と協業', ehTitle: 'アニメ『エブリデイホスト』グッズデザイン',
+      standTitle: 'PJX グッズデザインプロジェクト 1', pjx2Title: 'PJX グッズデザインプロジェクト 2', aesTitle: 'AESTHER グッズデザインプロジェクト', trTitle: 'アニメ『東京リベンジャーズ』グッズデザイン', slTitle: 'ステラライブ グッズデザイン', evTitle: 'コンテンツ企画「ヒッピー資格証」', evRole: '企画 · Webデザイン全般 · 総括ディレクション', evDesc: 'イベントの企画からWebページのデザイン全般、総括ディレクションまで担当しました。', evLink: 'サイトを見る', webTitle: 'ハッブル事務所 公式Webページデザイン', roleLabel: '役割', webRole: '総括ディレクター · デザイナー2名と協業', webDesc: '全体のワイヤーフレームと画面構成を設計し、ディレクションとデザインを担当しました。', dirTitle: 'SKOSHISM オフラインイベントグッズ アートディレクション · ビフォー/アフター', dirDesc: '総括ディレクターとしてアートディレクションを担当し、最終スローガンデザインとチケット表面デザインを手がけました。', dirRole: '総括ディレクター · デザイナー3名と協業', ehTitle: 'アニメ『エブリデイホスト』グッズデザイン',
       s1: 'ヒアリング · 資料整理', d1: 'キャラクター設定、配信コンセプト、ご希望の雰囲気を一緒に整理します。', s2: 'ラフ案', d2: '構図とレイアウトをまずラフでお見せします。',
       s3: '制作 · 修正', d3: '進捗を随時共有し、フィードバックを反映します。', s4: '最終納品', d4: 'PSD · PNG(透過背景)など必要な形式でお渡しします。' }
   };
@@ -778,10 +807,10 @@ class Component extends DCLogic {
         return { href: '#' + id, label, fg: on ? '#FFFFFF' : '#5B6773', bg: on ? '#447CA2' : 'transparent' };
       }),
       ...(() => {
-        const groups = [[0, 1, 2, 3], [4], [5], [6], 'goods', 'web', 'dir'];
-        const gNo = ['P01', 'P02', 'P03', 'P04', 'P05', 'P06', 'P07'];
-        const gName = ja ? ['キービジュアルポスター', 'オーバーレイ', 'ロゴ', 'シーンデザイン', 'グッズ', 'Webデザイン', 'アートディレクション'] : ['키비주얼 포스터', '오버레이', '로고', '씬 디자인', '굿즈', '웹 디자인', '아트 디렉팅'];
-        const special = { goods: './assets/goods/eh/badge-koichi.png', web: './assets/works/hubble-2.png', dir: './assets/works/oci-after-1.png' };
+        const groups = [[0, 1, 2, 3], [4], [5], [6], 'goods', 'web', 'dir', 'event'];
+        const gNo = ['P01', 'P02', 'P03', 'P04', 'P05', 'P06', 'P07', 'P08'];
+        const gName = ja ? ['キービジュアルポスター', 'オーバーレイ', 'ロゴ', 'シーンデザイン', 'グッズ', 'Webデザイン', 'アートディレクション', 'コンテンツ企画'] : ['키비주얼 포스터', '오버레이', '로고', '씬 디자인', '굿즈', '웹 디자인', '아트 디렉팅', '컨텐츠 기획'];
+        const special = { goods: './assets/goods/eh/badge-koichi.png', web: './assets/works/hubble-2.png', event: './assets/works/hippie-1.png', dir: './assets/works/oci-after-1.png' };
         const g = groups[this.state.workTab] || groups[0];
         const sub = Math.min(this.state.subTab, g.length - 1);
         this._activeGroup = !Array.isArray(g) ? [] : this.state.workTab === 0 ? [1, 0, 2, 3] : g;
@@ -794,7 +823,8 @@ class Component extends DCLogic {
           subTabs: (Array.isArray(g) ? g : []).map((wi, j) => { const on = j === sub; return { label: subNames[j] + ' · ' + this.works[wi].items.length, border: on ? '#447CA2' : '#D6E2EB', bg: on ? '#447CA2' : '#FFFFFF', fg: on ? '#FFFFFF' : '#3A4652', pick: () => this.setState({ subTab: j }) }; })
         };
       })(),
-      isGoods: this._special === 'goods', isWeb: this._special === 'web', isDir: this._special === 'dir',
+      isGoods: this._special === 'goods', isWeb: this._special === 'web', isEvent: this._special === 'event',
+      eventShots: [['MAIN', 1], ['RESULT', 2]].map(([name, i]) => ({ name, src: './assets/works/hippie-' + i + '.png' })), isDir: this._special === 'dir',
       activeWork: [this._activeGroup.map(i => this.works[i])].filter(ws => ws.length).map(ws => ({ ...(ws.length > 1 ? this.works[0] : ws[0]), items: ws.flatMap(w => w.items) })).map(p => ({
         ...p, title: ja ? p.titleJa : p.title, count: p.items.length,
         ratio: p.wide ? '16/9' : '20/29', minCol: p.wide ? '300px' : '200px', kindLabel: p.wide ? t.works : t.poster,
